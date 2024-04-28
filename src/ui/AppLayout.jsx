@@ -6,11 +6,12 @@ import PageLoader from "./PageLoader";
 
 function AppLayout() {
   const navigation = useNavigation();
-  const isLoading = navigation.state === "loading"; // "laoding" or "idle"
+  const isLoading = navigation.state === "loading"; // "loading" or "idle"
 
   return (
     <div className="grid h-screen grid-rows-[auto_1fr_auto]">
       {isLoading && <PageLoader />}
+
       <Header />
       <div className="my-10 overflow-scroll">
         <main className="mx-auto max-w-3xl">
