@@ -12,7 +12,7 @@ import Error from "./ui/Error";
 
 const router = createBrowserRouter([
   {
-    // layout route as no "path"
+    // layout route has no "path"
     element: <AppLayout />,
     errorElement: <Error />,
     children: [
