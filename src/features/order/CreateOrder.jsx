@@ -1,8 +1,9 @@
 import { Form, redirect, useActionData, useNavigation } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import { createOrder } from "../../services/apiRestaurant";
+
 import Button from "../../ui/Button";
-import { useSelector } from "react-redux";
 
 // https://uibakery.io/regex-library/phone-number
 const isValidPhone = (str) =>
