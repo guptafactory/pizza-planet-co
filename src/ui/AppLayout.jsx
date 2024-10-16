@@ -13,7 +13,8 @@ function AppLayout() {
       {isLoading && <PageLoader />}
 
       <Header />
-      <div className="my-10 overflow-scroll">
+
+      <div>
         <main className="mx-auto max-w-3xl">
           <Outlet />
         </main>

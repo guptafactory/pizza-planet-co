@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 
+import EmptyCart from "./EmptyCart";
 import { getUsername } from "./../user/userSlice";
 import { clearCart, getCart } from "./cartSlice";
 import CartItem from "./CartItem";
@@ -13,8 +14,10 @@ function Cart() {
   const dispatch = useDispatch();
 
   function handleClearCart() {
-    dispatch(clearCart);
+    dispatch(clearCart());
   }
+
+  if (!cart.length) return <EmptyCart />;
 
   return (
     <div className="px-4 py-3">
