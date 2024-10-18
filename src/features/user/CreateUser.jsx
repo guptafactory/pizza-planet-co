@@ -13,7 +13,7 @@ function CreateUser() {
   function handleSubmit(e) {
     e.preventDefault();
 
-    if (!username || username.length < 3) return;
+    if (!username) return;
 
     dispatch(updateName(username));
     navigate("/menu");

@@ -1,13 +1,14 @@
 // Test ID: IIDSAT
 
 import { useLoaderData } from "react-router-dom";
-import { getOrder } from "../../services/apiRestaurant";
+import OrderItem from "./OrderItem";
+
 import {
   calcMinutesLeft,
   formatCurrency,
   formatDate,
 } from "../../utils/helpers";
-import OrderItem from "./OrderItem";
+import { getOrder } from "../../services/apiRestaurant";
 
 // const order = {
 //   id: "ABCDEF",
@@ -88,7 +89,7 @@ function Order() {
 
       <ul className="divide-y divide-stone-200 border-b border-t">
         {cart.map((item) => (
-          <OrderItem item={item} key={item.id} />
+          <OrderItem item={item} key={item.pizzaId} />
         ))}
       </ul>
 
