@@ -3,7 +3,7 @@ import { Form, redirect, useActionData, useNavigation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import store from "./../../store";
-import { fetchAddress, getUsername } from "./../user/userSlice";
+import { fetchAddress } from "./../user/userSlice";
 import { clearCart, getCart, getTotalCartPrice } from "./../cart/cartSlice";
 
 import EmptyCart from "./../cart/EmptyCart";
@@ -161,7 +161,7 @@ export async function action({ request }) {
 
   const newOrder = await createOrder(order);
 
-  store.dispatch(clearCart()); // Optimization Issues
+  store.dispatch(clearCart()); // Optimization Issues, but no useDispatch outside react components
 
   return redirect(`/order/${newOrder.id}`);
 }

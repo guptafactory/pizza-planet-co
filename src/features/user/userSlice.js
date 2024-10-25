@@ -18,7 +18,7 @@ export const fetchAddress = createAsyncThunk(
       longitude: positionObj.coords.longitude,
     };
 
-    // using a reverse geocoding API to get a description of the user's address, so we can display it the order form, so that the user can correct it if wrong
+    // using a reverse geocoding API to get a description of the user's address for order form (user can correct it there if wrong)
     const addressObj = await getAddress(position);
 
     const address = `${addressObj?.locality}, ${addressObj?.city} ${addressObj?.postcode}, ${addressObj?.countryName}`;
